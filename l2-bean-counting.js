@@ -17,6 +17,7 @@ function countChar(string, gezochteLetter) {
     return count;
 }
 // functie countChar heb ik niet werkend gekregen..
+// Verder dan dit ben ik niet gekomen, volgens ligt het probleem bij de 2de parameter maar zelf kom ik er niet uit.
 
 console.log(countBs("BBBbbbbbBC"));
 // → 10
