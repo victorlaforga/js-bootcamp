@@ -303,6 +303,10 @@ return --> is geen side effect
 
 
 ## Chapter 4
+.push method adds adds value to the and of the array
+.pop method does the opposite, it removes the last value in the array
+
+.delete 
 
 ## Chapter 5
 
