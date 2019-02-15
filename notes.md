@@ -304,10 +304,64 @@ return --> is geen side effect
 
 ## Chapter 4
 .push method adds adds value to the and of the array
+
 .pop method does the opposite, it removes the last value in the array
 
-.delete 
+.delete operator deletes the property on it
 
+.assign = geeft
+
+The push method adds values to the end of an array, and the pop method does the opposite, removing the last value in the array and returning it.
+
+```javascript
+let sequence = [1, 2, 3];
+sequence.push(4);
+sequence.push(5);
+console.log(sequence);
+// → [1, 2, 3, 4, 5]
+console.log(sequence.pop());
+// → 5
+console.log(sequence);
+// → [1, 2, 3, 4]
+```
+
+### Mutabilty
+Properties van een object kunnen niet worden aangepast, het enige wat wel kan is om de properties overteschrijven.
+
+### Further Arraylog
+
+Adding and removing elements the end of an array earlier --> shift & unshift
+
+LastIndexOf = method to search from the end instead of the start
+
+slice = another array method which takes start and end indices and returns an array that has only elements between them. *start index* is inclusive, and the *end index* is exlusive.
+
+```javascript
+console.log("coconuts".slice(4, 7));
+// → nut
+console.log("coconut".indexOf("u"));
+// → 5
+```
+concat = a method which glues arrays together to create a new array
+
+
+### Strings and properties
+
+.trim = removes whitespace
+
+.split = hiermee kan je een string splitten
+
+.join = hiermee kan je de string weer aan elkar laten joinen
+
+.repeat = string laten repeaten
+```
+let sentence = "Secretarybirds specialize in stomping";
+let words = sentence.split(" ");
+console.log(words);
+// → ["Secretarybirds", "specialize", "in", "stomping"]
+console.log(words.join(". "));
+// → Secretarybirds. specialize. in. stomping
+```
 ## Chapter 5
 
 ## Chapter 6
