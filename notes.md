@@ -456,5 +456,97 @@ throw keyword is used to raise an exception
 ## Chapter 9
 
 ## Chapter 10
+Modules = zijn stukken code die iets vormen
+		vb. soort van lego blokjes
+	
+Relaties tussen modules onderling noem je *dependencies*
+Packages = een stuk code die je ken verdelen (copied and installed)
+		- ze kunnen 1 of meer modules bevatten
+		- heeft vaak uitleg erbij voor mensen die de code niet hebben beschreven.
+		
+NPM (package manager = 	1. een online service waar je packages kan downloaden
+			2. Een programma dat je helpt installeren en managen
+			
+### Evaluating data as code
+operator eval = executes a string/argument in the current scope
+
+The most obvious way is the special operator eval, which will execute a string in the current scope. This is usually a bad idea because it breaks some of the properties that scopes normally have, such as it being easily predictable which binding a given name refers to.
+
+```javascript
+const x = 13;
+function evalAndReturnX(code) {
+  eval(code);
+  return x;
+}
+
+console.log(evalAndReturnX("var x = 2"));
+// → 2
+console.log(x);
+// → 1
+```
+
+### Emmascript modules
+
+export = export things
+export kan voor een function, class of binding komen
+
+```javascript
+const ordinal = require("ordinal");
+const {days, months} = require("date-names");
+
+exports.formatDate = function(date, format) {
+  return format.replace(/YYYY|M(MMM)?|Do?|dddd/g, tag => {
+    if (tag == "YYYY") return date.getFullYear();
+    if (tag == "M") return date.getMonth();
+    if (tag == "MMMM") return months[date.getMonth()];
+    if (tag == "D") return date.getDate();
+    if (tag == "Do") return ordinal(date.getDate());
+    if (tag == "dddd") return days[date.getDay()];
+  });
+};
+
+console.log('YYYY')
+```
+
+rename imported bindings by using the word *as*
+vb.
+```javascript
+import ordinal from "ordinal";
+import {days, months} from "date-names";
+
+export function formatDate(date, format) { /* ... */ }
+```
+
+
+
+ES modules worden eerst geimporteerd voordat ze worden gerund --> dat betekent dat import declaraties niet in functies of blocks moeten zitten
+
+### Building and bundling
+compile code = translating code to plain javascript
+bundlers = tools om kleine files als 1 geheel te maken/binden
+minifiers = verwijderen automatisch comments en white space. En vervangt code door ander code die minder "zwaar" qua geheugen is.
+
+### Module Design
+Ease of use (makkelijk te begrijpen, ook voor andere)
+
 
 ## Chapter 11
+### Asynchronicity
+
+synchronous programming model = things that happen one at the time
+
+asynchronous model allows multiple things to happen at the same time
+
+threadd = a running program
+
+
+
+
+
+
+
+
+
+
+
+
