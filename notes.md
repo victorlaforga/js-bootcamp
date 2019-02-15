@@ -1,5 +1,5 @@
-	:nerd_face:
-# Chapter 1
+	
+# Chapter 1 :nerd_face:
 
 ## Values, Types, and Operators 
 
