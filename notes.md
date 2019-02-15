@@ -1,7 +1,7 @@
 # Notes 	:nerd_face:
-# Sammenvatting Chapter 1
+# Chapter 1
 
-## Values, Types, and Operators 
+# Values, Types, and Operators 
 
 
 
@@ -155,6 +155,7 @@ Such values are created by typing in their name (true, null) or value (13, "abc"
 
 
 ## Chapter 2
+## Program Structure
 Stuk code wat een value produceert = *expression*
 
 let caught = 5*5;
@@ -175,8 +176,8 @@ Functions are special values that encapsulate a piece of program. You can invoke
 
 
 ## Chapter 3
+## Defining a function
 
-### Defining a function
 
 ## Chapter 4
 
