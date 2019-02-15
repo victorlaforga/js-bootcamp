@@ -354,7 +354,15 @@ concat = a method which glues arrays together to create a new array
 .join = hiermee kan je de string weer aan elkar laten joinen
 
 .repeat = string laten repeaten
+
+
+
+```javascript
+console.log("  okay \n ".trim());
+// → okay
 ```
+
+```javascript 
 let sentence = "Secretarybirds specialize in stomping";
 let words = sentence.split(" ");
 console.log(words);
@@ -362,12 +370,89 @@ console.log(words);
 console.log(words.join(". "));
 // → Secretarybirds. specialize. in. stomping
 ```
+```javascript
+console.log("LA".repeat(3));
+// → LALALA
+```
 ## Chapter 5
+Higher order functions that operate on other function
+
+Functions that operate on other functions, either by taking them as arguments or by returning them, are called higher-order functions. Since we have already seen that functions are regular values, there is nothing particularly remarkable about the fact that such functions exist. The term comes from mathematics, where the distinction between functions and other values is taken more seriously.
+
+Higher-order functions allow us to abstract over actions, not just values. They come in several forms. For example, we can have functions that create new functions.
+```javascript
+function greaterThan(n) {
+  return m => m > n;
+}
+let greaterThan10 = greaterThan(10);
+console.log(greaterThan10(11));
+// → true
+```
+### Abstractions
+Abstractions; hide details and give us the ability to talk about problems in a higher level
+
+### Filtering arrays
+
+To find the scripts in the data set that are still in use, the following function might be helpful. It filters out the elements in an array that don’t pass a test.
+```javascript
+function filter(array, test) {
+  let passed = [];
+  for (let element of array) {
+    if (test(element)) {
+      passed.push(element);
+    }
+  }
+  return passed;
+}
+
+console.log(filter(SCRIPTS, script => script.living));
+// → [{name: "Adlam", …}, …]
+```
+
+The function uses the argument named test, a function value, to fill a “gap” in the computation—the process of deciding which elements to collect.
+
+Note how the filter function, rather than deleting elements from the existing array, builds up a new array with only the elements that pass the test. This function is pure. It does not modify the array it is given.
+
+### Summarizing with reduce
+reduce = takes element and combines it with the current value
+
+```javascript
+function reduce(array, combine, start) {
+  let current = start;
+  for (let element of array) {
+    current = combine(current, element);
+  }
+  return current;
+}
+console.log(reduce([1, 2, 3, 4], (a, b) => a + b, 0));
+// → 10
+```
+
+### Strings & Character codes
+charCodeArt = een methode die een stuk van de code geeft, niet de volledige character
+codePointMethod = gives a full unicode character
+
+### Summary
+Being able to pass function values to other functions is a deeply useful aspect of JavaScript. It allows us to write functions 
+that model computations with “gaps” in them. The code that calls these functions can fill in the gaps by providing function 
+values.
+
+Arrays provide a number of useful higher-order methods. You can use forEach to loop over the elements in an array. The filter 
+method returns a new array containing only the elements that pass the predicate function. Transforming an array by putting 
+each element through a function is done with map. You can use reduce to combine all the elements in an array into a single 
+value. The some method tests whether any element matches a given predicate function. And findIndex finds the position of the 
+first element that matches a predicate.
 
 ## Chapter 6
 
 ## Chapter 8
+process of finding mistakes/bugs in programs = debugging
 
+"use strict": kan je gebruiken boven aan je script of functie. Dan wordt je javascript strenger met controleren van je code. *Het helpt je zoeken naar de oorzaak van een probleem*
+
+Exception handling = stoppen waar je mee bezig bent en "spring" naar de plek waar het probleem opgelost kan worden.
+
+throw keyword is used to raise an exception
 ## Chapter 9
 
 ## Chapter 10
